@@ -29,7 +29,7 @@ def create_folder():
     os.chdir('photo')
 
 
-if __name__ == '__main__':
+def main():
     start = time.time()
     create_folder()
     p = Pool(5)
