@@ -19,7 +19,6 @@ def downloading(url, page):
         urllib.request.urlretrieve(img_src, img_name)  # 下载到本地
         print('在第%s页成功下载第%s张图片' % (page, t))
         t += 1
-    list.append(t)
 
 
 def create_folder():
@@ -33,10 +32,10 @@ def create_folder():
 if __name__ == '__main__':
     start = time.time()
     create_folder()
-    p = Pool(4)
-    for a in range(1, 5):
-        p.apply_async(downloading, args=('http://tieba.baidu.com/p/4153594193?pn=%s' % a, a,))
+    p = Pool(5)
+    for a in range(1, 10):
+        p.apply_async(downloading, args=('http://tieba.baidu.com/p/3899257862?pn=%s' % a, a))
     p.close()
     p.join()
     end = time.time()
-    print("用时%s秒" % ( round(end - start, 3)))
+    print("用时%s秒" % (round(end - start, 3)))
