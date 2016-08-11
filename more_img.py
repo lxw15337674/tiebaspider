@@ -1,4 +1,4 @@
-#多进程+多线程: 每个进程对应一个网页的爬取,每个线程对应一个网页的一张图片的下载
+# 多进程+多线程: 每个进程对应一个网页的爬取,每个线程对应一个网页的一张图片的下载
 import threading
 from multiprocessing import Pool
 import time
@@ -15,7 +15,7 @@ def imgdownding(img, page):
     img_name = '%s_%s.jpg' % (page, random.random())  # 设置图片名
     img_src = img['src']  # 获取图片地址
     urllib.request.urlretrieve(img_src, img_name)  # 下载到本地
-    print('在第%s页成功下载%s图片' % (page,'一张'))
+    print('在第%s页成功下载%s图片' % (page, '一张'))
 
 
 def use_parser(url, page):
